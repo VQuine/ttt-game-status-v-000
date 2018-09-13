@@ -1,7 +1,4 @@
 
-
-
-
 # Helper Method
 def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
@@ -21,6 +18,38 @@ WIN_COMBINATIONS = [
 [2,4,6]
 
 ]
+
+
+def won?(board)
+  WIN_COMBINATIONS.each do |combo|
+  board[combo[0]] == board[combo[1]] && board[combo[2]] == board[combo[1]] && position_taken?(board, combo[0])
+  end
+end
+
+
+def full?(board)
+  !board.any?(" ") || !board.any?("")
+end
+
+def draw?(board)
+  full?(board) && !won?(board)
+end
+
+def over?(board)
+  won?(board) || draw?(board)
+end
+
+def winner(board)
+  
+end
+
+
+
+
+
+
+
+
 
 
 
@@ -45,26 +74,3 @@ def won?(board)
   end
 =end
 
-def won?(board)
-  if !board.include?(index) == "X" && !board.include?(index) == "O"
-   return false
-  end
-end
-
-
-def full?(board)
-  !board.any?(" ") || !board.any?("")
-end
-
-def draw?(board)
-  if full?(board) && !won?(board)
-  end
-end
-
-def over?(board)
-  if won?(board) || full?(board) || draw?(board)
-  end
-end
-
-def winner(board)
-end
