@@ -46,10 +46,10 @@ def winner(board)
   if combo = won?(board)
     token = board[combo[0]]
  #if won?(board)
-  else 
+  else
    nil
- end 
-   
+ end
+
 end
 
 
