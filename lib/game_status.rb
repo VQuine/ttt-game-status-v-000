@@ -43,7 +43,13 @@ def over?(board)
 end
 
 def winner(board)
-
+  if combo = won?(board)
+    token = board[combo[0]]
+ #if won?(board)
+  else 
+   nil
+ end 
+   
 end
 
 
