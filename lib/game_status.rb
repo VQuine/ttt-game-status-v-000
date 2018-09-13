@@ -31,7 +31,7 @@ end
 
 
 def full?(board)
-  !board.any?(" ") && !board.any?("") && !board.any?(nil)
+  !board.any? { |i| i == " " || i == "" || i == nil }
 end
 
 def draw?(board)
